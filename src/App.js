@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Landing } from './Landing'
-import { BTC } from './coins/BTC'
+import Discover from './coins/Discover'
 
 export default function App() {
 
@@ -75,7 +75,7 @@ export default function App() {
               &nbsp;
               &nbsp;
               <Link to="/"><img src="./logo2.svg" /></Link> &nbsp;
-              <Link to="/btc">Discover</Link> &nbsp;
+              <Link to="/discover">Discover</Link> &nbsp;
               <Link to="/">Profile</Link> &nbsp;
               <Link to="/signup">Sign Up</Link> &nbsp;
               <Link to="/signin">Log In</Link> &nbsp;
@@ -87,7 +87,7 @@ export default function App() {
         <>
           <Routes>
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
-            <Route path="/btc" element={<BTC login={loginHandler} />}></Route>
+            <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/signin" element={<SignIn login={loginHandler} />}></Route>
             

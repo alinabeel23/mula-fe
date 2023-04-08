@@ -3,6 +3,7 @@ import { Canvas, extend, useFrame, useThree } from "@react-three/fiber"
 import { Physics, useSphere } from "@react-three/cannon"
 import { Environment, Effects as EffectComposer, useTexture } from "@react-three/drei"
 import { SSAOPass } from "three-stdlib"
+import HomeStore from "./stores/HomeStore"
 
 extend({ SSAOPass })
 

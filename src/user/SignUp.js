@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
+import HomeStore from '../stores/HomeStore'
 
 export default function SignUp(props) {
 
@@ -19,7 +20,6 @@ export default function SignUp(props) {
   return (
     <div>
         <h1>Sign Up</h1>
-
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>

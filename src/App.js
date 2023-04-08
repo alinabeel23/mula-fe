@@ -1,25 +1,100 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import SignUp from './user/SignUp'
+import SignIn from './user/SignIn'
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import Axios from 'axios'
+import jwt_decode from 'jwt-decode'
+import { Landing } from './Landing'
+import { BTC } from './coins/BTC'
 
-function App() {
+export default function App() {
+
+  const [isAuth, setIsAuth] = useState(false)
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    let token = localStorage.getItem("token")
+    if(token != null){
+      let user = jwt_decode(token)
+
+      if(user){
+        setIsAuth(true)
+        setUser(user)
+      }
+      else if (!user){
+        localStorage.removeItem("token")
+        setIsAuth(false)
+      }
+    }
+
+  }, [])
+  
+
+  const registerHandler = (user) => {
+    Axios.post('auth/signup', user)
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
+  const loginHandler = (cred) => {
+    Axios.post('auth/signin', cred)
+    .then(res => {
+      console.log(res.data.token);
+      // save token into local storage
+      let token = res.data.token
+      if(token != null){
+        localStorage.setItem('token', token)
+        let user = jwt_decode(token)
+        setIsAuth(true)
+        setUser(user)
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      setIsAuth(false)
+    })
+  }
+
+  const logoutHandler = (e) => {
+    e.preventDefault()
+    localStorage.removeItem("token")
+    setIsAuth(false)
+    setUser(null)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <Router>
+        <>
+          <>
+            <>
+              &nbsp;
+              &nbsp;
+              <Link to="/"><img src="./logo2.svg" /></Link> &nbsp;
+              <Link to="/btc">Discover</Link> &nbsp;
+              <Link to="/">Profile</Link> &nbsp;
+              <Link to="/signup">Sign Up</Link> &nbsp;
+              <Link to="/signin">Log In</Link> &nbsp;
+              <Link to="/logout" onClick={logoutHandler}>Log Out</Link> &nbsp;
+            </>
+          </>
+        </>
 
-export default App;
+        <>
+          <Routes>
+            <Route path="/" element={<Landing login={loginHandler} />}></Route>
+            <Route path="/btc" element={<BTC login={loginHandler} />}></Route>
+            <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
+            <Route path="/signin" element={<SignIn login={loginHandler} />}></Route>
+            
+          </Routes>
+        </>
+      </Router>
+    </>
+  )
+}
+ 

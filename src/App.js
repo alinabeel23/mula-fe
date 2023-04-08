@@ -74,7 +74,7 @@ export default function App() {
             <>
               &nbsp;
               &nbsp;
-              <Link to="/"><img src="./logo2.svg" /></Link> &nbsp;
+              <Link to="/">Home</Link> &nbsp;
               <Link to="/discover">Discover</Link> &nbsp;
               <Link to="/">Profile</Link> &nbsp;
               <Link to="/signup">Sign Up</Link> &nbsp;

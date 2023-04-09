@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
-import HomeStore from '../stores/HomeStore'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignUp(props) {
+
+    const navigate = useNavigate()
 
     const [newUser, setNewUser] = useState({})
 
@@ -15,6 +17,7 @@ export default function SignUp(props) {
 
     const registerHandler = () => {
         props.register(newUser)
+        navigate('/discover')
     }
 
   return (

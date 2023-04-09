@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import {Container, Form, Button} from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignIn(props) {
+
+    const navigate = useNavigate()
 
     const [newUser, setNewUser] = useState({})
 
@@ -14,6 +17,7 @@ export default function SignIn(props) {
 
     const loginHandler = () => {
         props.login(newUser)
+        navigate('/discover') 
     }
 
   return (

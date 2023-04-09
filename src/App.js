@@ -7,6 +7,7 @@ import jwt_decode from 'jwt-decode'
 import { Landing } from './Landing'
 import Discover from './coins/Discover'
 import Coin from './coins/Coin'
+import Profile from './user/Profile'
 
 export default function App() {
 
@@ -75,9 +76,9 @@ export default function App() {
             <>
               &nbsp;
               &nbsp;
-              <Link to="/">Home</Link> &nbsp;
+              <Link to="/"><img src='https://svgshare.com/i/rwc.svg' style={{ width: '4rem' }}/></Link> &nbsp;
               <Link to="/discover">Discover</Link> &nbsp;
-              <Link to="/">Profile</Link> &nbsp;
+              <Link to="/profile">Profile</Link> &nbsp;
               <Link to="/signup">Sign Up</Link> &nbsp;
               <Link to="/signin">Log In</Link> &nbsp;
               <Link to="/logout" onClick={logoutHandler}>Log Out</Link> &nbsp;
@@ -89,6 +90,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
+            <Route path="/profile/:id" element={<Profile login={loginHandler} />}></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/signin" element={<SignIn login={loginHandler} />}></Route>

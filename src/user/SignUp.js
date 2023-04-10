@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Container, Form, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 export default function SignUp(props) {
@@ -23,25 +23,34 @@ export default function SignUp(props) {
   return (
     <div>
         <h2 className='heading'>Sign Up</h2>
-        <Container>
-            <Form.Group>
-                <Form.Label>First Name</Form.Label>
-                <Form.Control name='firstName' onChange={changeHandler}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control name='lastName' onChange={changeHandler}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control name='emailAddress' onChange={changeHandler}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Password</Form.Label>
-                <Form.Control name='password' type='password' onChange={changeHandler}></Form.Control>
-            </Form.Group>
-            <Button variant='priamry' onClick={registerHandler}>Register</Button>
-        </Container>
+        <div className='form'>
+            <div className='form-item'>
+                {/* <Form.Label >First Name</Form.Label> */}
+                <input autocomplete="off" placeholder='First Name' className='auth-form' name='firstName' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                {/* <Form.Label>Last Name</Form.Label> */}
+                <input autocomplete="off" placeholder='Last Name' className='auth-form' name='lastName' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                {/* <Form.Label>Email Address</Form.Label> */}
+                <input autocomplete="off" placeholder='Email Address' className='auth-form' name='emailAddress' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                {/* <Form.Label>Email Address</Form.Label> */}
+                <input autocomplete="off" placeholder='Phone Number' className='auth-form' name='phoneNum' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                {/* <Form.Label>Password</Form.Label> */}
+                <input autocomplete="off" placeholder='Password' className='auth-form' name='password' type='password' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                {/* <Form.Label>Password</Form.Label> */}
+                <input autocomplete="off" placeholder='Confirm Password' className='auth-form' name='password' type='password' onChange={changeHandler}></input>
+            </div>
+        </div>
+        <Button className='button' variant='priamry' onClick={registerHandler}>Register</Button>
+
 
     </div>
   )

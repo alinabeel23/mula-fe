@@ -81,7 +81,7 @@ export default function App() {
               &nbsp;
               &nbsp;
               <div className='navbar-left'>
-                <Link to="/"><img src='https://svgshare.com/i/rwc.svg' style={{ width: '4rem' }} /></Link> &nbsp;
+                <Link to="/"><img src='https://svgshare.com/i/rwc.svg' style={{ width: '6rem' }} /></Link> &nbsp;
               </div>
               <div className='navbar-center'>
                 <input type="text" value={store.query} onChange={store.setQuery} className='searchbar' placeholder='What crypto are you looking for?' />
@@ -105,7 +105,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className='line-list'></div>
+        <div className='line-nav'></div>
 
 
         <>

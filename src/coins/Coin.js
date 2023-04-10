@@ -30,8 +30,9 @@ export default function Coin() {
       </header>
 
       <AreaChart
-          width={500}
-          height={400}
+      className='chart'
+          width={1300}
+          height={500}
           data={store.graphData}
           margin={{
             top: 10,

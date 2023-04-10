@@ -35,7 +35,7 @@ const HomeStore = create((set) => ({
     } else {
         set({coins: trending})      
     }
-    }, 500),
+    }, 200),
 
     fetchCoins: async () => {
         const [res, btcRes] = await Promise.all([

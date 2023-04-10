@@ -157,8 +157,6 @@ input:-internal-autofill-selected {
   font-weight: 500;
 }
 
-
-
 .form {
   padding: 0 7rem;
   display: flex;
@@ -196,7 +194,6 @@ input:-internal-autofill-selected {
   margin-bottom: 1rem;
 }
 
-
 .trending-name h2 {
   text-align: left;
   font-size: 2rem;
@@ -218,3 +215,18 @@ input:-internal-autofill-selected {
   line-height: 10px;
   
 }  
+
+.recharts-wrapper {
+  width: 100% !important;
+  margin-left: 1rem;
+  margin-top: 2rem;
+
+}
+
+/* .recharts-surface {
+  width: 100%;
+}
+
+.recharts-cartesian-grid-horizontal {
+  width: 500px;
+} */

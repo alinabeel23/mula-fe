@@ -112,7 +112,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
-            <Route path="/profile" element={<Profile login={loginHandler} />}></Route>
+            <Route path="/profile" element={<Profile login={loginHandler} />} user={user}></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/signin" element={<SignIn login={loginHandler} />}></Route>

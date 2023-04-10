@@ -33,7 +33,7 @@ p {
 
 a {
   padding-right: 10px;
-  cursor: pointer;
+  cursor: url('https://www.svgrepo.com/show/403021/black-circle.svg');
   pointer-events: all;
   color: black;
   text-decoration: none; /* no underline */
@@ -61,8 +61,9 @@ a {
   height: 6rem;
   /* border: 1px solid black; */
   /* border-bottom: 1px solid black; */
-  margin-left: 1rem;
+  margin-left: 2rem;
   padding: 0 1rem 0 1rem;
+  justify-content: center;
 }
 
 .trending-img img {
@@ -75,7 +76,7 @@ a {
 .trending-name {
   width: 20rem;
   position: relative;
-  right: 12rem;
+  right: 10rem;
 }
 
 .navbar {
@@ -85,6 +86,8 @@ a {
   align-items: center;
   margin-top: 0.8rem;
   margin-bottom: 1.4rem;
+  padding-left: 2.3rem;
+  padding-right: 2rem;
 }
 
 .navbar-left {
@@ -120,9 +123,15 @@ a {
   width: 100%;
   margin-bottom: 1rem;
 }
+.line-list {
+  border-bottom: 1px solid black;
+  background-color: color;
+  width: 100%;
+  margin-top: 1rem;
+}
 
 .heading {
-  margin-left: 1rem;
+  margin-left: 3rem;
   font-weight: 200;
   font-size: 3rem;
   margin-top: 0;
@@ -133,4 +142,13 @@ a {
 .trending-name h2 {
   text-align: left;
   font-size: 2rem;
+  font-weight: 600;
+}
+
+.prices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: left;
 }

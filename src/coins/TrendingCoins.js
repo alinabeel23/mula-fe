@@ -15,15 +15,15 @@ export default function TrendingCoins({coin}) {
                     </div>
                     <div className='prices'>
                     <div className='trending-priceBHD'>
-                        <span>{coin.priceBHD}</span> 
+                        <h4>BHD {coin.priceBHD}</h4> 
                     </div>
                     <div className='trending-priceBTC'>
-                        <span>{coin.priceBTC}</span> 
+                        <p>BTC {coin.priceBTC}</p> 
                     </div>
                     </div>
 
                 </div>
-                <div className='line'></div>
+                <div className='line-list'></div>
 
             </Link>
             

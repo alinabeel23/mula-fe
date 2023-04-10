@@ -22,7 +22,7 @@ export default function SignUp(props) {
 
   return (
     <div>
-        <h1>Sign Up</h1>
+        <h2 className='heading'>Sign Up</h2>
         <Container>
             <Form.Group>
                 <Form.Label>First Name</Form.Label>

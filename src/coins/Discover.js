@@ -10,12 +10,14 @@ export default function Discover() {
         store.fetchCoins()
 
     })
+
+
   return (
     <div>
       {/* <input type="text" value={store.query} onChange={store.setQuery}/> */}
 
       <div className='trending-coins'>
-      <div className='line'></div>
+      {/* <div className='line'></div> */}
         <h2 className='heading'>Trending Coins</h2>
         <div className='line'></div>
       {store.coins.map(coin => {

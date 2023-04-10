@@ -12,17 +12,17 @@ export default function SignIn(props) {
         const user = {...newUser}
         user[e.target.name] = e.target.value
         setNewUser(user)
-        console.log(user);
     }
 
     const loginHandler = () => {
         props.login(newUser)
         navigate('/discover') 
+
     }
 
   return (
     <div>
-        <h1>Sign In</h1>
+        <h2 className='heading'>Sign In</h2>
 
         <Container>
             <Form.Group>

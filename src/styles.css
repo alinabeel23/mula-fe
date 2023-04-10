@@ -84,8 +84,8 @@ a {
   height: 3rem;
   display: flex;
   align-items: center;
-  margin-top: 0.8rem;
-  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.8rem;
   padding-left: 2.3rem;
   padding-right: 2rem;
 }
@@ -110,11 +110,13 @@ a {
 .searchbar {
   border: none;
   border-bottom: 1px black solid;
-  width: 16rem;
+  width: 24rem;
   text-align: center;
-  font-size: medium;
+  font-size: 1.3rem;
   color: black;
   outline: none;
+  position: relative;
+  right: 4rem;
 }
 
 .line {
@@ -134,7 +136,7 @@ a {
   margin-left: 3rem;
   font-weight: 200;
   font-size: 3rem;
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 

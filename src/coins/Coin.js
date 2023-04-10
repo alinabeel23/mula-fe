@@ -24,9 +24,11 @@ export default function Coin() {
   return (
     <div>
       <header>
+
         {/* <img src={store.dataRes.image.large} ></img> */}
-        <h2>{store.dataRes.name} [{store.dataRes.symbol}]</h2>
+        <h2 className='heading'>{store.dataRes.name} [{store.dataRes.symbol}]</h2>
       </header>
+
       <AreaChart
           width={500}
           height={400}
@@ -42,7 +44,7 @@ export default function Coin() {
           <XAxis dataKey="Date" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="Price" stroke="#58ad21" fill="#8bbf6a" />
         </AreaChart>
         <div>
           <h4>Market Cap Rank</h4>

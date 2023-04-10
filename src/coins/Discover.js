@@ -15,13 +15,16 @@ export default function Discover() {
       {/* <input type="text" value={store.query} onChange={store.setQuery}/> */}
 
       <div className='trending-coins'>
-        <h2>Trending Coins</h2>
+      <div className='line'></div>
+        <h2 className='heading'>Trending Coins</h2>
         <div className='line'></div>
       {store.coins.map(coin => {
         return (
           <TrendingCoins key={coin.id} coin={coin} />
+          
         )
-      })}
+      })
+      }
       </div>
     </div>
   )

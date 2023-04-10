@@ -190,7 +190,7 @@ input:-internal-autofill-selected {
   margin-left: 3rem;
   font-weight: 200;
   font-size: 3rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -230,3 +230,30 @@ input:-internal-autofill-selected {
 .recharts-cartesian-grid-horizontal {
   width: 500px;
 } */
+
+
+.coin-data {
+  margin: 4rem;
+  /* margin-top: 5rem; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  line-height: 0.5rem;
+  font-family: Helvetica, sans-serif;
+}
+
+.coin-data p {
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.coin-data h3 {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.currency-span {
+  font-weight: 500;
+}

@@ -47,25 +47,28 @@ export default function Coin() {
           <Tooltip />
           <Area type="monotone" dataKey="Price" stroke="#58ad21" fill="#8bbf6a" />
         </AreaChart>
-        <div>
-          <h4>Market Cap Rank</h4>
-          <span>{store.dataRes.market_cap_rank}</span>
+        <div className='coin-data'>
+        <div className='data-item'>
+          <h3>Market Cap Rank</h3>
+          <p>{store.dataRes.market_cap_rank}</p>
         </div>
-        <div>
-          <h4>24Hour High</h4>
-          <p> <span>BHD</span> {store.dataRes.market_data.high_24h.bhd}</p> 
+        <div className='data-item'>
+          <h3>Circulating Supply</h3>
+          <p>{store.dataRes.market_data.circulating_supply}</p>
         </div>
-        <div>
-          <h4>24Hour Low</h4>
-          <p> <span>BHD</span> {store.dataRes.market_data.low_24h.bhd}</p> 
+        <div className='data-item'>
+          <h3>Current Price</h3>
+          <p><span className='currency-span'>BHD</span> {store.dataRes.market_data.current_price.bhd}</p>
         </div>
-        <div>
-          <h4>Circulating Supply</h4>
-          <span>{store.dataRes.market_data.circulating_supply}</span>
+        <div className='data-item'>
+          <h3>24Hour High</h3>
+          <p> <span className='currency-span'>BHD</span> {store.dataRes.market_data.high_24h.bhd}</p> 
         </div>
-        <div>
-          <h4>Current Price</h4>
-          <span>BHD {store.dataRes.market_data.current_price.bhd}</span>
+        <div className='data-item'>
+          <h3>24Hour Low</h3>
+          <p> <span className='currency-span'>BHD</span> {store.dataRes.market_data.low_24h.bhd}</p> 
+        </div>
+        
         </div>
 
     </div>

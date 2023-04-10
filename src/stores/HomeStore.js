@@ -53,10 +53,10 @@ const HomeStore = create((set) => ({
         const coins = res.data.coins.map(coin => {
             return{
                 name: coin.item.name,
-                image: coin.item.large,
+                image: coin.item.small,
                 id: coin.item.id,
-                priceBTC: coin.item.price_btc,
-                priceBHD: coin.item.price_btc * btcPrice
+                priceBTC: (coin.item.price_btc).toFixed(8),
+                priceBHD: (coin.item.price_btc * btcPrice).toFixed(8)
             }
         })
 

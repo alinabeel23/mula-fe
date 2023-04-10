@@ -8,11 +8,14 @@ import { Landing } from './Landing'
 import Discover from './coins/Discover'
 import Coin from './coins/Coin'
 import Profile from './user/Profile'
+import HomeStore from './stores/HomeStore'
 
 export default function App() {
 
   const [isAuth, setIsAuth] = useState(false)
   const [user, setUser] = useState({})
+
+  const store = HomeStore()
 
   useEffect(() => {
     let token = localStorage.getItem("token")
@@ -71,20 +74,25 @@ export default function App() {
   return (
     <>
       <Router>
-        <>
-          <>
-            <>
+        <div>
+          <div>
+            <div className='navbar'>
               &nbsp;
               &nbsp;
+              <div className='navbar-left'>
               <Link to="/"><img src='https://svgshare.com/i/rwc.svg' style={{ width: '4rem' }}/></Link> &nbsp;
+              </div>
+              <div className='navbar-right'>
+              <input type="text" value={store.query} onChange={store.setQuery} className='searchbar' placeholder='What crypto are you looking for?'/>
               <Link to="/discover">Discover</Link> &nbsp;
               <Link to="/profile">Profile</Link> &nbsp;
               <Link to="/signup">Sign Up</Link> &nbsp;
               <Link to="/signin">Log In</Link> &nbsp;
               <Link to="/logout" onClick={logoutHandler}>Log Out</Link> &nbsp;
-            </>
-          </>
-        </>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <>
           <Routes>

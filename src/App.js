@@ -82,8 +82,10 @@ export default function App() {
               <div className='navbar-left'>
               <Link to="/"><img src='https://svgshare.com/i/rwc.svg' style={{ width: '4rem' }}/></Link> &nbsp;
               </div>
-              <div className='navbar-right'>
+              <div className='navbar-center'>
               <input type="text" value={store.query} onChange={store.setQuery} className='searchbar' placeholder='What crypto are you looking for?'/>
+              </div>
+              <div className='navbar-right'>
               <Link to="/discover">Discover</Link> &nbsp;
               <Link to="/profile">Profile</Link> &nbsp;
               <Link to="/signup">Sign Up</Link> &nbsp;

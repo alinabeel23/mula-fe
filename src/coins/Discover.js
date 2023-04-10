@@ -16,6 +16,7 @@ export default function Discover() {
 
       <div className='trending-coins'>
         <h2>Trending Coins</h2>
+        <div className='line'></div>
       {store.coins.map(coin => {
         return (
           <TrendingCoins key={coin.id} coin={coin} />

@@ -12,7 +12,7 @@ const ShowStore = create((set) => ({
         
         const graphData = graphRes.data.prices.map((price) => {
             const [timestamp, p] = price
-            const date = new Date(timestamp).toLocaleDateString('en-us')
+            const date = new Date(timestamp).toLocaleDateString('en-uk')
             return {
                 Date: date,
                 Price: p,
@@ -23,6 +23,8 @@ const ShowStore = create((set) => ({
             graphData: graphData,
             dataRes: dataRes.data, // update dataRes in the state
         })
+
+        console.log(dataRes);
     },
 }))
 

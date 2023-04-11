@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
 
-export default function Profile(props) {
-    const [authenticated, setauthenticated] = useState(null);
+export default function Profile() {
+    // const [authenticated, setauthenticated] = useState(null);
 
-    const { user } = props
+    // const { user } = props
     
-    useEffect(() => {
-        const loggedInUser = localStorage.getItem("authenticated");
-        console.log(localStorage.getItem("authenticated"));
-        if (loggedInUser) {
-            setauthenticated(loggedInUser);
-        }
-    }, [])
+    // useEffect(() => {
+    //     const loggedInUser = localStorage.getItem("token");
+    //     console.log(localStorage.getItem("token"));
+    //     if (loggedInUser) {
+    //         setauthenticated(loggedInUser);
+    //         console.log('user is', lp);
+    //     }
+    // }, [])
 
     
 
     // if (!authenticated) {
-    //     return <Navigate replace to="/login" />;
+    //     return <Navigate replace to="/signup" />;
     // } else {
         return (
             <div>
@@ -26,5 +27,4 @@ export default function Profile(props) {
 
             </div>
         )
-    }
-// }
+}

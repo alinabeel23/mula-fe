@@ -98,7 +98,7 @@ export default function App() {
                 <>
                   <Link to="/discover">Discover</Link> &nbsp;
                   <Link to="/signup">Sign Up</Link> &nbsp;
-                  <Link to="/signin">Log In</Link> &nbsp;
+                  <Link to="/login">Log In</Link> &nbsp;
                 </>
                 )}
               </div>
@@ -112,10 +112,10 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
-            <Route path="/profile" element={<Profile login={loginHandler} />} user={user}></Route>
+            <Route path="/profile" element={isAuth ? <Profile /> : <SignIn  login={loginHandler}/> } user={user}></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
-            <Route path="/signin" element={<SignIn login={loginHandler} />}></Route>
+            <Route path="/login" element={<SignIn login={loginHandler} />}></Route>
 
           </Routes>
         </>

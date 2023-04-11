@@ -10,6 +10,8 @@ import Coin from './coins/Coin'
 import Profile from './user/Profile'
 import HomeStore from './stores/HomeStore'
 import SearchCoins from './coins/SearchCoins'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function App() {
 
@@ -77,6 +79,16 @@ export default function App() {
     localStorage.removeItem("token")
     setIsAuth(false)
     setUser(null)
+    toast.success('Log out successful, see you tomorrow!', {
+      position: "top-left",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+  });
   }
 
   return (
@@ -85,6 +97,7 @@ export default function App() {
         <div>
           <div>
             <div className='navbar'>
+            <ToastContainer />
               &nbsp;
               &nbsp;
               <div className='navbar-left'>
@@ -113,7 +126,7 @@ export default function App() {
           </div>
         </div>
         <div className='line-nav'></div>
-        <div className='line'></div>
+        {/* <div className='line'></div> */}
       {store.coins.map(coin => {
         return (
           <SearchCoins key={coin.id} coin={coin} />

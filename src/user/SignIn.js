@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {Form, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function SignIn(props) {
 
@@ -19,10 +21,23 @@ export default function SignIn(props) {
         if (newUser === {}) {
             setErrorMsg('User does not exist')
         } else {
-        props.login(newUser)
-        navigate('/discover') 
+            toast.success('Time to get that mula!', {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                onClose: () => {
+                    props.login(newUser)
+                    navigate('/discover') 
+                }
+            });
         }
     }
+    
 
     const gotoSignup = () => {
         navigate('/signup')
@@ -49,6 +64,8 @@ export default function SignIn(props) {
         <Button className='button' variant='priamry' onClick={loginHandler}>Log In</Button>
         <h3 className='under-form' onClick={gotoSignup}>New here?<span> Sign up now!</span></h3>
         <h3 className='under-form' onClick={(gotoChangePassword)}>Forgot you password?<span> Let's change it!</span></h3>
+        <ToastContainer />
+
 
 
     </div>

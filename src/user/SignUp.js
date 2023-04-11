@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function SignUp(props) {
+    
 
     const navigate = useNavigate()
 
@@ -22,9 +23,31 @@ export default function SignUp(props) {
         if (newUser.password !== newUser.confirmPassword) {
             console.log("Passwords don't match")
             setErrorMsg("Passwords don't match!")
+            toast.error("Passwords don't match :(" , {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });;
         } else {
         props.register(newUser)
-        navigate('/discover')
+        toast.success('Signed up successfully, yay!', {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            onClose: () => {
+                navigate('/discover')
+            }
+            });
         }
     }
 
@@ -55,9 +78,10 @@ export default function SignUp(props) {
                 <input  placeholder='Confirm Password' className='auth-form' name='confirmPassword' type='password' onChange={changeHandler}></input>
             </div>
         </form>
-        <p  className='errormsg'>{errorMsg}</p>
+        {/* <p  className='errormsg'>{errorMsg}</p> */}
         <Button className='button' variant='priamry' onClick={registerHandler}>Register</Button>
         <h3 className='under-form' onClick={gotoLogin}>Already got an account? <span>Log in!</span></h3>
+        <ToastContainer />
 
 
 

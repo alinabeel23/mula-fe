@@ -154,6 +154,7 @@ input:-internal-autofill-selected {
   border-bottom: 1px solid black;
   text-align: left;
   font-family: Helvetica, sans-serif;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -277,4 +278,12 @@ input:-internal-autofill-selected {
 
 .under-form span{
   font-weight: 400;
+  cursor: pointer;
+}
+
+.errormsg{
+  font-weight: 200;
+  margin-left: 3rem;
+  line-height: 1rem;
+  color: rgb(152, 0, 0);
 }

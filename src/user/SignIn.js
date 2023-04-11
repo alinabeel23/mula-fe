@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Container, Form, Button} from 'react-bootstrap'
+import {Form, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 export default function SignIn(props) {
@@ -7,6 +7,7 @@ export default function SignIn(props) {
     const navigate = useNavigate()
 
     const [newUser, setNewUser] = useState({})
+    const [errorMsg, setErrorMsg] = useState('')
 
     const changeHandler = (e) => {
         const user = {...newUser}
@@ -15,10 +16,22 @@ export default function SignIn(props) {
     }
 
     const loginHandler = () => {
+        if (newUser === {}) {
+            setErrorMsg('User does not exist')
+        } else {
         props.login(newUser)
         navigate('/discover') 
-
+        }
     }
+
+    const gotoSignup = () => {
+        navigate('/signup')
+    }
+
+    const gotoChangePassword = () => {
+        navigate('/changepassword')
+    }
+ 
 
   return (
     <div>
@@ -26,17 +39,16 @@ export default function SignIn(props) {
 
         <div className='form'>
             <div className='form-item'>
-                {/* <Form.Label>Email Address</Form.Label> */}
                 <Form.Control className='auth-form' name='emailAddress' placeholder='Email Address' onChange={changeHandler}></Form.Control>
             </div>
             <div className='form-item'>
-                {/* <Form.Label>Password</Form.Label> */}
                 <Form.Control className='auth-form' name='password' type='password' placeholder='Password' onChange={changeHandler}></Form.Control>
             </div>
         </div>
+        <p  className='errormsg'>{errorMsg}</p>
         <Button className='button' variant='priamry' onClick={loginHandler}>Log In</Button>
-        <h3 className='under-form'>New here? <span>Sign up now!</span></h3>
-        <h3 className='under-form'>Forgot you password?<span> Let's change it!</span></h3>
+        <h3 className='under-form' onClick={gotoSignup}>New here?<span> Sign up now!</span></h3>
+        <h3 className='under-form' onClick={(gotoChangePassword)}>Forgot you password?<span> Let's change it!</span></h3>
 
 
     </div>

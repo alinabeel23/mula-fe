@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import {Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function SignUp(props) {
 
     const navigate = useNavigate()
 
     const [newUser, setNewUser] = useState({})
+    const [errorMsg, setErrorMsg] = useState('')
 
     const changeHandler = (e) => {
         const user = {...newUser}
@@ -18,10 +21,15 @@ export default function SignUp(props) {
     const registerHandler = () => {
         if (newUser.password !== newUser.confirmPassword) {
             console.log("Passwords don't match")
+            setErrorMsg("Passwords don't match!")
         } else {
         props.register(newUser)
         navigate('/discover')
         }
+    }
+
+    const gotoLogin = () => {
+        navigate('/login')
     }
 
   return (
@@ -44,12 +52,12 @@ export default function SignUp(props) {
                 <input  placeholder='Password' className='auth-form' name='password' type='password' onChange={changeHandler}></input>
             </div>
             <div className='form-item'>
-                {/* <Form.Label>Password</Form.Label> */}
                 <input  placeholder='Confirm Password' className='auth-form' name='confirmPassword' type='password' onChange={changeHandler}></input>
             </div>
         </form>
+        <p  className='errormsg'>{errorMsg}</p>
         <Button className='button' variant='priamry' onClick={registerHandler}>Register</Button>
-        <h3 className='under-form'>Already got an account? <span>Log in!</span></h3>
+        <h3 className='under-form' onClick={gotoLogin}>Already got an account? <span>Log in!</span></h3>
 
 
 

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import React from 'react'
 
-export default function Profile() {
+export default function Profile(props) {
     // const [authenticated, setauthenticated] = useState(null);
 
     // const { user } = props
@@ -20,11 +19,13 @@ export default function Profile() {
     // if (!authenticated) {
     //     return <Navigate replace to="/signup" />;
     // } else {
-        return (
-            <div>
-                <h2 className='heading'>User Name</h2>
-                {/* {user.user.name} */}
-
-            </div>
-        )
+    return (
+        <div>
+            <h2 className='heading'>{props.user.name} Nabeel</h2>
+            <img className='pfp' src='https://www.citypng.com/public/uploads/small/116652258274f0mjs6lep10dohsdnx1xdagzvggylnqvoytp1ewb6apvcykaw8vgteolcubrjcbbfnphltelb6evjlowiaieg6a08klytx1uuos.png'/>
+            <h4 className='profile-text'>Edit Profile Photo</h4>
+            <h4 className='profile-text'>Change Password</h4>
+            <h4 className='profile-text'>Delete Account</h4>
+        </div>
+    )
 }

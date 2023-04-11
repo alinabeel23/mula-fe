@@ -9,6 +9,7 @@ import Discover from './coins/Discover'
 import Coin from './coins/Coin'
 import Profile from './user/Profile'
 import HomeStore from './stores/HomeStore'
+import SearchCoins from './coins/SearchCoins'
 
 export default function App() {
 
@@ -16,6 +17,11 @@ export default function App() {
   const [user, setUser] = useState({})
 
   const store = HomeStore()
+
+  useEffect(() => {
+    store.fetchCoins()
+
+})
 
   useEffect(() => {
     let token = localStorage.getItem("token")
@@ -33,6 +39,7 @@ export default function App() {
     }
 
   }, [])
+
 
 
   const registerHandler = (user) => {
@@ -106,13 +113,21 @@ export default function App() {
           </div>
         </div>
         <div className='line-nav'></div>
+        <div className='line'></div>
+      {store.coins.map(coin => {
+        return (
+          <SearchCoins key={coin.id} coin={coin} />
+          
+        )
+      })
+      }
 
 
         <>
           <Routes>
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
-            <Route path="/profile" element={isAuth ? <Profile /> : <SignIn  login={loginHandler}/> } user={user}></Route>
+            <Route path="/profile" element={isAuth ? <Profile {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/login" element={<SignIn login={loginHandler} />}></Route>

@@ -257,3 +257,24 @@ input:-internal-autofill-selected {
 .currency-span {
   font-weight: 500;
 }
+
+.pfp {
+  width: 15rem;
+  border-radius: 50;
+  margin: 0 0 0 2rem;
+}
+
+.profile-text {
+  font-weight: 400;
+  margin-left: 2rem;
+}
+
+.under-form {
+  font-weight: 200;
+  margin-left: 3rem;
+  line-height: 1rem;
+}
+
+.under-form span{
+  font-weight: 400;
+}

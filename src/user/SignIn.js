@@ -35,6 +35,8 @@ export default function SignIn(props) {
             </div>
         </div>
         <Button className='button' variant='priamry' onClick={loginHandler}>Log In</Button>
+        <h3 className='under-form'>New here? <span>Sign up now!</span></h3>
+        <h3 className='under-form'>Forgot you password?<span> Let's change it!</span></h3>
 
 
     </div>

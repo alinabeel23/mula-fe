@@ -186,6 +186,12 @@ input:-internal-autofill-selected {
   width: 100%;
   margin-top: 1rem;
 }
+.line-footer {
+  border-bottom: 2px solid black;
+  background-color: color;
+  width: 100%;
+  /* margin-top: 1rem; */
+}
 
 .heading {
   margin-left: 3rem;
@@ -286,4 +292,24 @@ input:-internal-autofill-selected {
   margin-left: 3rem;
   line-height: 1rem;
   color: rgb(152, 0, 0);
+}
+
+.footer {
+  width: 100%;
+  /* position: absolute;
+  bottom: 0; */
+  background-color: white;
+}
+
+.footer p {
+  font-weight: 300;
+  margin: 1rem 2rem;
+}
+
+.margin-bottom {
+  margin-bottom: 11rem;
+}
+
+.margin-bottom2 {
+  margin-bottom: 17rem;
 }

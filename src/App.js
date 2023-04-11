@@ -148,6 +148,10 @@ export default function App() {
           </Routes>
         </>
       </Router>
+      <div className='footer'>
+      <div className='line-footer'></div>
+      <p>Copyright © 2023 Mula Technology Services. All Rights Reserved.</p>
+      </div>
 
     </>
   )

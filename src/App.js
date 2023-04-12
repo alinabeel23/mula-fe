@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import ChangePassword from './user/ChangePassword'
 import ResetPassword from './user/ResetPassword'
+import DeleteAccount from './user/DeleteAccount'
 
 export default function App() {
 
@@ -145,6 +146,7 @@ export default function App() {
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
             <Route path="/profile" element={isAuth ? <Profile {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
             <Route path="/changepassword" element={isAuth ? <ChangePassword {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
+            <Route path="/deleteaccount" element={isAuth ? <DeleteAccount {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/login" element={<SignIn login={loginHandler} />}></Route>

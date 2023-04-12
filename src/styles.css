@@ -202,6 +202,14 @@ input:-internal-autofill-selected {
   margin-bottom: 1rem;
 }
 
+.subheading2 {
+  margin-left: 3rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 0.6rem;
+}
+
 .subheading {
   font-weight: 200;
   font-size: 2rem;
@@ -288,13 +296,17 @@ input:-internal-autofill-selected {
   border-radius: 50%;
   width: 250px;
   height: 250px;
-  
-
+  object-fit: contain;
+  object-position: center;
+  /* Set maximum dimensions */
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .profile-text {
-  font-weight: 400;
-  margin-left: 2rem;
+  font-weight: 600;
+  margin: 6rem 0 4rem 3rem;
+  line-height: 0.6rem;
 }
 
 .under-form {

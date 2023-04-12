@@ -57,6 +57,10 @@ export default function Profile(props) {
         navigate('/changepassword')
     }
 
+    const gotoDeleteAccount = () => {
+        navigate('/deleteaccount')
+    }
+
     console.log('print this now', props.user);
     return (
         <div>
@@ -104,8 +108,10 @@ export default function Profile(props) {
 
             </div>
             <ToastContainer />
-            <h4 className='profile-text'><a onClick={gotoChangePassword}>Change Password</a></h4>
-            <h4 className='profile-text'>Delete Account</h4>
+            <div className='profile-text'>
+            <h4><a onClick={gotoChangePassword}>Change Password</a></h4>
+            <h4><a onClick={gotoDeleteAccount}>Delete Account</a></h4>
+            </div>
         </div>
     )
 }

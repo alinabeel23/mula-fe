@@ -12,6 +12,8 @@ import HomeStore from './stores/HomeStore'
 import SearchCoins from './coins/SearchCoins'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import ChangePassword from './user/ChangePassword'
+import ResetPassword from './user/ResetPassword'
 
 export default function App() {
 
@@ -65,7 +67,7 @@ export default function App() {
           let user = jwt_decode(token)
           setIsAuth(true)
           setUser(user)
-          console.log(user.user.name)
+          // console.log(user.user.name)
         }
       })
       .catch(err => {
@@ -73,6 +75,7 @@ export default function App() {
         setIsAuth(false)
       })
   }
+  console.log( 'the one im looking for' ,user);
 
   const logoutHandler = (e) => {
     e.preventDefault()
@@ -110,7 +113,7 @@ export default function App() {
 
                 {isAuth ? (
                   <>
-                <Link to="/profile">Hello, {user.user.name}!</Link> &nbsp;
+                <Link to="/profile">Hello, {user.user.firstName}!</Link> &nbsp;
                 <Link to="/discover">Discover</Link> &nbsp;
                 <Link to="/logout" onClick={logoutHandler}>Log Out</Link>
                 </>
@@ -141,9 +144,11 @@ export default function App() {
             <Route path="/" element={<Landing login={loginHandler} />}></Route>
             <Route path="/discover" element={<Discover login={loginHandler} />}></Route>
             <Route path="/profile" element={isAuth ? <Profile {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
+            <Route path="/changepassword" element={isAuth ? <ChangePassword {...user} /> : <SignIn  login={loginHandler}/> } ></Route>
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/login" element={<SignIn login={loginHandler} />}></Route>
+            <Route path="/resetpassword" element={<ResetPassword login={loginHandler} />}></Route>
 
           </Routes>
         </>

@@ -78,7 +78,6 @@ export default function SignUp(props) {
                 <input  placeholder='Confirm Password' className='auth-form' name='confirmPassword' type='password' onChange={changeHandler}></input>
             </div>
         </form>
-        {/* <p  className='errormsg'>{errorMsg}</p> */}
         <Button className='button' variant='priamry' onClick={registerHandler}>Register</Button>
         <h3 className='under-form margin-bottom' onClick={gotoLogin}>Already got an account? <span>Log in!</span></h3>
         <ToastContainer />

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
-export default function SignIn(props) {
+export default function ResetPassword(props) {
 
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ export default function SignIn(props) {
         if (newUser === {}) {
             setErrorMsg('User does not exist')
         } else {
-            toast.success('Time to get that mula!', {
+            toast.success('Password has been updated!', {
                 position: "top-left",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -39,31 +39,27 @@ export default function SignIn(props) {
     }
     
 
-    const gotoSignup = () => {
-        navigate('/signup')
+    const goBack = () => {
+        navigate('/profile')
     }
 
-    const gotoResetPassword = () => {
-        navigate('/resetpassword')
-    }
- 
+
 
   return (
     <div>
-        <h2 className='heading'>Sign In</h2>
+        <h2 className='heading'>Reset Password</h2>
 
         <div className='form'>
             <div className='form-item'>
-                <Form.Control className='auth-form' name='emailAddress' placeholder='Email Address' onChange={changeHandler}></Form.Control>
+                <Form.Control className='auth-form' name='emailAddress' placeholder='Your registered email' onChange={changeHandler}></Form.Control>
             </div>
-            <div className='form-item'>
-                <Form.Control className='auth-form' name='password' type='password' placeholder='Password' onChange={changeHandler}></Form.Control>
-            </div>
+            {/* <div className='form-item'>
+                <Form.Control className='auth-form' name='password' type='password' placeholder='New Password' onChange={changeHandler}></Form.Control>
+            </div> */}
         </div>
         <p  className='errormsg'>{errorMsg}</p>
-        <Button className='button' variant='priamry' onClick={loginHandler}>Log In</Button>
-        <h3 className='under-form' onClick={gotoSignup}>New here?<span> Sign up now!</span></h3>
-        <h3 className='under-form margin-bottom2' onClick={(gotoResetPassword)}>Forgot you password?<span> Let's change it!</span></h3>
+        <Button className='button' variant='priamry' onClick={loginHandler}>Send Magic Link</Button>
+        <h3 className='under-form' onClick={goBack}>Changed your mind?<span> Back to my profile!</span></h3>
         <ToastContainer />
 
 

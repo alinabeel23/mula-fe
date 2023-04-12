@@ -1,31 +1,64 @@
 import React from 'react'
 import { useState } from 'react';
-
+import { Button } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { useNavigate } from 'react-router-dom'
 export default function Profile(props) {
 
     const [selectedImage, setSelectedImage] = useState(null);
+    const [newUser, setNewUser] = useState({})
+    const [errorMsg, setErrorMsg] = useState('')
 
-    // const [authenticated, setauthenticated] = useState(null);
+    const navigate = useNavigate()
 
-    // const { user } = props
-    
-    // useEffect(() => {
-    //     const loggedInUser = localStorage.getItem("token");
-    //     console.log(localStorage.getItem("token"));
-    //     if (loggedInUser) {
-    //         setauthenticated(loggedInUser);
-    //         console.log('user is', lp);
-    //     }
-    // }, [])
+    const changeHandler = (e) => {
+        const user = {...newUser}
+        user[e.target.name] = e.target.value
+        setNewUser(user)
+        console.log(user);
+    }
 
-    
+    const editProfileHandler = () => {
+        if (newUser.password !== newUser.confirmPassword) {
+            console.log("Passwords don't match")
+            setErrorMsg("Passwords don't match!")
+            toast.error("Passwords don't match :(" , {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });;
+        } else {
+        props.register(newUser)
+        toast.success('Signed up successfully, yay!', {
+            position: "top-left",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            onClose: () => {
+                navigate('/discover')
+            }
+            });
+        }
+    }
+   
+    const gotoChangePassword = () => {
+        navigate('/changepassword')
+    }
 
-    // if (!authenticated) {
-    //     return <Navigate replace to="/signup" />;
-    // } else {
+    console.log('print this now' ,props.user);
     return (
         <div>
-            <h2 className='heading'>{props.user.name} Nabeel</h2>
+            <h2 className='heading'>{props.user.firstName} {props.user.lastName}</h2>
 
 
             {selectedImage && (
@@ -43,7 +76,24 @@ export default function Profile(props) {
             
             
             <h4 className='profile-text'>Edit Profile Photo</h4>
-            <h4 className='profile-text'>Change Password</h4>
+            <form className='form' autoComplete='off'>
+            <div className='form-item'>
+                <input  placeholder={props.user.firstName} type='text' className='auth-form' name='firstName' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                <input  placeholder={props.user.lastName} className='auth-form' name='lastName' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                <input  placeholder={props.user.email} className='auth-form' name='emailAddress' onChange={changeHandler}></input>
+            </div>
+            <div className='form-item'>
+                <input  placeholder={props.user.phoneNum} className='auth-form' name='phoneNum' onChange={changeHandler}></input>
+            </div>
+        </form>
+        {/* <p  className='errormsg'>{errorMsg}</p> */}
+        <Button className='button' variant='priamry' onClick={editProfileHandler}>Edit</Button>
+        <ToastContainer />
+            <h4 className='profile-text'><a onClick={gotoChangePassword}>Change Password</a></h4>
             <h4 className='profile-text'>Delete Account</h4>
         </div>
     )

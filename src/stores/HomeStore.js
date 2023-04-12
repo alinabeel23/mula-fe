@@ -44,7 +44,7 @@ const HomeStore = create((set) => ({
         ])
 
         const btcPrice = btcRes.data.bitcoin.bhd
-        console.log('hello there', btcPrice);
+        // console.log('hello there', btcPrice);
 
         // if (!btcRes.data)
         // return <></>

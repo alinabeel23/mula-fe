@@ -6,7 +6,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom'
 export default function Profile(props) {
 
-    const [selectedImage, setSelectedImage] = useState(null);
+
+    const defaultImg = 'https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/2776e79e778be9646d471a21c7fa4c8e~c5_720x720.jpeg?x-expires=1681380000&x-signature=11zSLchWFjRwMBYD75nvykoX7Dk%3D'
+    const [selectedImage, setSelectedImage] = useState(defaultImg);
     const [newUser, setNewUser] = useState({})
     const [errorMsg, setErrorMsg] = useState('')
 
@@ -59,23 +61,21 @@ export default function Profile(props) {
     return (
         <div>
             <h2 className='heading'>{props.user.firstName} {props.user.lastName}</h2>
-
-
             {selectedImage && (
-        <div>
-          <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
+        <div className='pfp'>
+          <img  alt="not found" src={selectedImage === defaultImg ? (selectedImage) : URL.createObjectURL(selectedImage)} />
         <br/>
-        <button className='button' onClick={() => setSelectedImage(null)}>Remove Photo</button>
+        <button className='button' onClick={() => setSelectedImage(defaultImg)}>Remove Photo</button>
         </div>
         )}
-        <input  type="file" name="pfp" onChange={(event) => {
+        <input className='custom-file-input' type="file" name="pfp" onChange={(event) => {
         console.log(event.target.files[0]);
         setSelectedImage(event.target.files[0]);
         }}
       />
             
             
-            <h4 className='profile-text'>Edit Profile Photo</h4>
+            {/* <h4 className='profile-text'>Edit Profile Photo</h4> */}
             <form className='form' autoComplete='off'>
             <div className='form-item'>
                 <input  placeholder={props.user.firstName} type='text' className='auth-form' name='firstName' onChange={changeHandler}></input>

@@ -14,6 +14,7 @@ body,
   padding: 0;
   overflow: auto;
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 80%);
+  font-family: Helvetica, sans-serif;
 }
 
 body {
@@ -266,9 +267,20 @@ input:-internal-autofill-selected {
 }
 
 .pfp {
-  width: 15rem;
+  width: 50%;
   border-radius: 50;
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.pfp img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  
+
 }
 
 .profile-text {
@@ -312,4 +324,20 @@ input:-internal-autofill-selected {
 
 .margin-bottom2 {
   margin-bottom: 17rem;
+}
+
+
+a {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+input::file-selector-button {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  padding: 0.5em;
+  border: none;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
 }

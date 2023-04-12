@@ -7,6 +7,7 @@ const HomeStore = create((set) => ({
     coins: [],
     trending: [],
     query: '',
+    searchResults: false,
 
     setQuery: (e) => {
         set({query: e.target.value})
@@ -31,9 +32,9 @@ const HomeStore = create((set) => ({
             }            
         })
 
-        set({coins: coins})
+        set({coins: coins, searchResults: true })
     } else {
-        set({coins: trending})      
+        set({coins: trending, searchResults: false})      
     }
     }, 200),
 

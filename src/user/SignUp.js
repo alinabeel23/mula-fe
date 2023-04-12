@@ -45,7 +45,7 @@ export default function SignUp(props) {
             progress: undefined,
             theme: "dark",
             onClose: () => {
-                navigate('/discover')
+                navigate('/login')
             }
             });
         }

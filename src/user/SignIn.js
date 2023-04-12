@@ -32,7 +32,7 @@ export default function SignIn(props) {
                 theme: "dark",
                 onClose: () => {
                     props.login(newUser)
-                    navigate('/discover') 
+                    navigate('/') 
                 }
             });
         }

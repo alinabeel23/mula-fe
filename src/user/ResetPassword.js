@@ -40,7 +40,7 @@ export default function ResetPassword(props) {
     
 
     const goBack = () => {
-        navigate('/profile')
+        navigate('/login')
     }
 
 
@@ -59,7 +59,7 @@ export default function ResetPassword(props) {
         </div>
         <p  className='errormsg'>{errorMsg}</p>
         <Button className='button' variant='priamry' onClick={loginHandler}>Send Magic Link</Button>
-        <h3 className='under-form' onClick={goBack}>Changed your mind?<span> Back to my profile!</span></h3>
+        <h3 className='under-form margin-bottom2' onClick={goBack}>Remembered your password?<span> Back to login!</span></h3>
         <ToastContainer />
 
 

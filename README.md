@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Mula [cryptofcurrency price app]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using the MERN stack for my fourth and final project at General Assembly. The application was built over the course of a week, and as a challenge for myself, I decided to go solo, to allow myself to get a better understanding of how the frontend and backend interact with one another.
 
-## Available Scripts
+## Brief
+The brief required the consumption of data from a third party APIs and all the basic CRUD operations to create a functional and interactive full stack application. 
 
-In the project directory, you can run:
+## What is it exactly
+Initially, the application was intended to allow the user to buy and sell cryptocurrency as well as maintaining a digital wallet, but due to some obstacles and and constraints, the app currently only displays cryptos and their details.
 
-### `npm start`
+## Technologies Used
+### Frontend
+React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
+Express, Node.js, MongoDB
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## APIs Utilized
+### CoinGecko
+An independently sourced crypto data such as live prices, NFT floor prices, trading volume, exchange volumes, trading pairs, historical data, contract address data, crypto categories, crypto derivatives, images and more.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Cloudinary
+A cloud-based image and video management service with an API that enables developers to easily upload, manipulate, optimize, and deliver media assets in real-time.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+The application was deployed using Render and can be viewed here.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Future Enhancements
+I would love to come back to this and intergrate the ability to make transactions, as well as using a more effecient API as the current one can be quite glitchy.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## In Conclusion
+This was a chaotic yet insightful experience, and it was a great opportunity for me to explore React and the endless possibilities it offers. 

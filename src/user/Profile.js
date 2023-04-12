@@ -15,7 +15,7 @@ export default function Profile(props) {
     const navigate = useNavigate()
 
     const changeHandler = (e) => {
-        const user = {...newUser}
+        const user = { ...newUser }
         user[e.target.name] = e.target.value
         setNewUser(user)
         console.log(user);
@@ -25,7 +25,7 @@ export default function Profile(props) {
         if (newUser.password !== newUser.confirmPassword) {
             console.log("Passwords don't match")
             setErrorMsg("Passwords don't match!")
-            toast.error("Passwords don't match :(" , {
+            toast.error("Passwords don't match :(", {
                 position: "top-left",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -34,65 +34,76 @@ export default function Profile(props) {
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                });;
+            });;
         } else {
-        props.register(newUser)
-        toast.success('Signed up successfully, yay!', {
-            position: "top-left",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            onClose: () => {
-                navigate('/discover')
-            }
+            props.register(newUser)
+            toast.success('Signed up successfully, yay!', {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                onClose: () => {
+                    navigate('/discover')
+                }
             });
         }
     }
-   
+
     const gotoChangePassword = () => {
         navigate('/changepassword')
     }
 
-    console.log('print this now' ,props.user);
+    console.log('print this now', props.user);
     return (
         <div>
             <h2 className='heading'>{props.user.firstName} {props.user.lastName}</h2>
-            {selectedImage && (
-        <div className='pfp'>
-          <img  alt="not found" src={selectedImage === defaultImg ? (selectedImage) : URL.createObjectURL(selectedImage)} />
-        <br/>
-        <button className='button' onClick={() => setSelectedImage(defaultImg)}>Remove Photo</button>
-        </div>
-        )}
-        <input className='custom-file-input' type="file" name="pfp" onChange={(event) => {
-        console.log(event.target.files[0]);
-        setSelectedImage(event.target.files[0]);
-        }}
-      />
-            
-            
-            {/* <h4 className='profile-text'>Edit Profile Photo</h4> */}
-            <form className='form' autoComplete='off'>
-            <div className='form-item'>
-                <input  placeholder={props.user.firstName} type='text' className='auth-form' name='firstName' onChange={changeHandler}></input>
+            <div className='profile'>
+                <div className='pfp'>
+                    {selectedImage && (
+                        <div >
+                            <img alt="not found" src={selectedImage === defaultImg ? (selectedImage) : URL.createObjectURL(selectedImage)} />
+                            <br />
+                            <button className='button' onClick={() => setSelectedImage(defaultImg)}>Remove Photo</button>
+                        </div>
+                    )}
+                    <input className='custom-file-input' type="file" name="pfp" onChange={(event) => {
+                        console.log(event.target.files[0]);
+                        setSelectedImage(event.target.files[0]);
+                    }}
+                    />
+                </div>
+
+                {/* <h4 className='profile-text'>Edit Profile Photo</h4> */}
+                <div className='form-profile' >
+                    <div>
+                        <h3 className='subheading'>Personal Details</h3>
+                    </div>
+                    <form className='form-items' autoComplete='off'>
+
+                        <div className='form-item'>
+                            <input placeholder={props.user.firstName} type='text' className='auth-form-profile' name='firstName' onChange={changeHandler}></input>
+                        </div>
+                        <div className='form-item'>
+                            <input placeholder={props.user.lastName} className='auth-form-profile' name='lastName' onChange={changeHandler}></input>
+                        </div>
+                        <div className='form-item'>
+                            <input placeholder={props.user.email} className='auth-form-profile' name='emailAddress' onChange={changeHandler}></input>
+                        </div>
+                        <div className='form-item'>
+                            <input placeholder={props.user.phoneNum} className='auth-form-profile' name='phoneNum' onChange={changeHandler}></input>
+                        </div>
+                    </form>
+                    <div className='buton-div'>
+                        <Button className='button-edit' variant='priamry' onClick={editProfileHandler}>Edit</Button>
+                    </div>
+                </div>
+
             </div>
-            <div className='form-item'>
-                <input  placeholder={props.user.lastName} className='auth-form' name='lastName' onChange={changeHandler}></input>
-            </div>
-            <div className='form-item'>
-                <input  placeholder={props.user.email} className='auth-form' name='emailAddress' onChange={changeHandler}></input>
-            </div>
-            <div className='form-item'>
-                <input  placeholder={props.user.phoneNum} className='auth-form' name='phoneNum' onChange={changeHandler}></input>
-            </div>
-        </form>
-        {/* <p  className='errormsg'>{errorMsg}</p> */}
-        <Button className='button' variant='priamry' onClick={editProfileHandler}>Edit</Button>
-        <ToastContainer />
+            <ToastContainer />
             <h4 className='profile-text'><a onClick={gotoChangePassword}>Change Password</a></h4>
             <h4 className='profile-text'>Delete Account</h4>
         </div>

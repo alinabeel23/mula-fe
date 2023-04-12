@@ -202,6 +202,15 @@ input:-internal-autofill-selected {
   margin-bottom: 1rem;
 }
 
+.subheading {
+  font-weight: 200;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+
+}
+
 .trending-name h2 {
   text-align: left;
   font-size: 2rem;
@@ -267,12 +276,12 @@ input:-internal-autofill-selected {
 }
 
 .pfp {
-  width: 50%;
+  width: 40%;
   border-radius: 50;
   margin: 0 0 0 3rem;
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pfp img {
@@ -340,4 +349,63 @@ input::file-selector-button {
   border-radius: 3px;
   background-color: white;
   cursor: pointer;
+  align-self: center;
+  margin-left: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.form-profile {
+  padding: 0 0rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+  line-height: 4rem;
+  margin-left: 3rem;
+  padding-right: 3rem;
+}
+
+.form-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.auth-form-profile {
+  border: none;
+  border-bottom: 1px black solid;
+  width: 22rem;
+  text-align: left;
+  font-size: 1.3rem;
+  color: black;
+  outline: none;
+  /* position: relative; */
+  /* right: 4rem; */
+}
+
+
+.button-edit {
+  background: none;
+  color: inherit;
+  width: 4rem;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  margin: 0;
+  margin-top: 1.7rem;
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
 }

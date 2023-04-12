@@ -10,9 +10,11 @@ export default function Profile(props) {
     const defaultImg = 'https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/2776e79e778be9646d471a21c7fa4c8e~c5_720x720.jpeg?x-expires=1681380000&x-signature=11zSLchWFjRwMBYD75nvykoX7Dk%3D'
     const [selectedImage, setSelectedImage] = useState(defaultImg);
     const [newUser, setNewUser] = useState({})
-    const [errorMsg, setErrorMsg] = useState('')
 
     const navigate = useNavigate()
+
+    
+
 
     const changeHandler = (e) => {
         const user = { ...newUser }
@@ -22,22 +24,8 @@ export default function Profile(props) {
     }
 
     const editProfileHandler = () => {
-        if (newUser.password !== newUser.confirmPassword) {
-            console.log("Passwords don't match")
-            setErrorMsg("Passwords don't match!")
-            toast.error("Passwords don't match :(", {
-                position: "top-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-            });;
-        } else {
-            props.register(newUser)
-            toast.success('Signed up successfully, yay!', {
+        {
+            toast.success('Details have been updated successfully!', {
                 position: "top-left",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -46,9 +34,6 @@ export default function Profile(props) {
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                onClose: () => {
-                    navigate('/discover')
-                }
             });
         }
     }
@@ -81,7 +66,7 @@ export default function Profile(props) {
                     />
                 </div>
 
-                {/* <h4 className='profile-text'>Edit Profile Photo</h4> */}
+
                 <div className='form-profile' >
                     <div>
                         <h3 className='subheading'>Personal Details</h3>
@@ -98,11 +83,11 @@ export default function Profile(props) {
                             <input placeholder={props.user.email} className='auth-form-profile' name='emailAddress' onChange={changeHandler}></input>
                         </div>
                         <div className='form-item'>
-                            <input placeholder={props.user.phoneNum} className='auth-form-profile' name='phoneNum' onChange={changeHandler}></input>
+                            <input placeholder={ props.user.phoneNum ? props.user.phoneNum : 'Phone Number' } className='auth-form-profile' name='phoneNum' onChange={changeHandler}></input>
                         </div>
                     </form>
                     <div className='buton-div'>
-                        <Button className='button-edit' variant='priamry' onClick={editProfileHandler}>Edit</Button>
+                        <Button className='button-edit' variant='priamry' onClick={editProfileHandler}>Update Details</Button>
                     </div>
                 </div>
 

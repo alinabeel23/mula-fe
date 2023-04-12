@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import ChangePassword from './user/ChangePassword'
 import ResetPassword from './user/ResetPassword'
 import DeleteAccount from './user/DeleteAccount'
+import UploadImage from './user/UploadImage'
 
 export default function App() {
 
@@ -150,6 +151,7 @@ export default function App() {
             <Route path="/:id" element={<Coin />}></Route>
             <Route path="/signup" element={<SignUp register={registerHandler} />}></Route>
             <Route path="/login" element={<SignIn login={loginHandler} />}></Route>
+            <Route path="/uploadimage" element={<UploadImage login={loginHandler} />}></Route>
             <Route path="/resetpassword" element={<ResetPassword login={loginHandler} />}></Route>
 
           </Routes>

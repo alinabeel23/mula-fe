@@ -3,6 +3,7 @@ import {Form, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import Axios from 'axios';
 
 export default function DeleteAccount(props) {
 
@@ -11,17 +12,28 @@ export default function DeleteAccount(props) {
     const [newUser, setNewUser] = useState({})
     const [errorMsg, setErrorMsg] = useState('')
 
+    console.log(newUser);
+
     const changeHandler = (e) => {
         const user = {...newUser}
         user[e.target.name] = e.target.value
         setNewUser(user)
     }
+    
+    
+    const userId = props.user.id
 
-    const loginHandler = () => {
-        if (newUser === {}) {
-            setErrorMsg('User does not exist')
-        } else {
-            toast.success('Password has been updated!', {
+    const deleteUser = () => {
+        Axios.delete(`profile/delete?id=${userId}`, 
+        {
+            headers: {
+                "Authorization" : "Bearer" + localStorage.getItem("token")
+            }
+        })
+        .then(res => {
+            console.log("record delete")
+            console.log(res)
+            toast.success('Your account has been deleted :(', {
                 position: "top-left",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -31,13 +43,15 @@ export default function DeleteAccount(props) {
                 progress: undefined,
                 theme: "dark",
                 onClose: () => {
-                    props.login(newUser)
                     navigate('/discover') 
                 }
             });
-        }
+            
+        })
+        .catch(err => {
+            console.log(err);
+        })
     }
-    
 
     const goBack = () => {
         navigate('/profile')
@@ -58,7 +72,7 @@ export default function DeleteAccount(props) {
 
         </div>
         <p  className='errormsg'>{errorMsg}</p>
-        <Button className='button' variant='priamry' onClick={loginHandler}>DELETE :(</Button>
+        <Button className='button' variant='priamry' onClick={deleteUser}>DELETE :(</Button>
         <h3 className='under-form margin-bottom2' onClick={goBack}>Noooo,<span> Back to my profile!</span></h3>
         <ToastContainer />
 

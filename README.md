@@ -9,6 +9,11 @@ The brief required the consumption of data from a third party APIs and all the b
 ## What is it exactly
 Initially, the application was intended to allow the user to buy and sell cryptocurrency as well as maintaining a digital wallet, but due to some obstacles and and constraints, the app currently only displays cryptos and their details.
 
+## ERD
+<img width="884" alt="Screen Shot 2023-04-13 at 10 32 14 AM" src="https://user-images.githubusercontent.com/122525304/231686996-ab107677-5f27-4146-85ea-b2c3bd434f0c.png">
+
+## Wireframes
+
 ## Technologies Used
 ### Frontend
 React was used to create the UI, I also took this as an opportunity to explore react three fiber as this the direction I would like to head in.
@@ -32,8 +37,13 @@ Once the user clicks on a coin of their choice, they will be able to view live d
 <img width="1352" alt="Screen Shot 2023-04-13 at 10 08 14 AM" src="https://user-images.githubusercontent.com/122525304/231683830-70cd41ad-e859-453c-86ea-e001cbcf938a.png">
 
 
+## Work Process 
+To manage my tasks, I used Trello to keep track of my progress and to ensure I was on track.
+<img width="1352" alt="Screen Shot 2023-04-12 at 8 23 28 PM" src="https://user-images.githubusercontent.com/122525304/231686373-c9898599-bc68-42f9-8303-cc01a0bbf740.png">
+
 ## Deployment
 The application was deployed using Render and can be viewed [here](https://mula.onrender.com).
+
 ## Future Enhancements
 I would love to come back to this and intergrate the ability to make transactions, as well as using a more effecient API as the current one can be quite glitchy.
 

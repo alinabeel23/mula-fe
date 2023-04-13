@@ -13,6 +13,7 @@ Initially, the application was intended to allow the user to buy and sell crypto
 <img width="884" alt="Screen Shot 2023-04-13 at 10 32 14 AM" src="https://user-images.githubusercontent.com/122525304/231686996-ab107677-5f27-4146-85ea-b2c3bd434f0c.png">
 
 ## Wireframes
+![wireframes-100](https://user-images.githubusercontent.com/122525304/231690889-6847a7ee-d36c-4d99-8134-a66e2fbf7d15.jpg)
 
 ## Technologies Used
 ### Frontend

@@ -10,10 +10,10 @@ Initially, the application was intended to allow the user to buy and sell crypto
 
 ## Technologies Used
 ### Frontend
-React
+React was used to create the UI, I also took this as an opportunity to explore react three fiber as this the direction I would like to head in.
 
 ### Backend
-Express, Node.js, MongoDB
+Express, Node.js and MongoDB were utilized for the backend to create the APIs and store data collected from the user.
 
 
 ## APIs Utilized

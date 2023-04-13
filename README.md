@@ -1,4 +1,5 @@
 # Mula [cryptofcurrency price app]
+<img width="1352" alt="Screen Shot 2023-04-13 at 10 07 39 AM" src="https://user-images.githubusercontent.com/122525304/231682829-e8023015-cf30-43e5-9937-be85814154f2.png">
 
 This project was created using the MERN stack for my fourth and final project at General Assembly. The application was built over the course of a week, and as a challenge for myself, I decided to go solo, to allow myself to get a better understanding of how the frontend and backend interact with one another.
 
@@ -15,7 +16,6 @@ React was used to create the UI, I also took this as an opportunity to explore r
 ### Backend
 Express, Node.js and MongoDB were utilized for the backend to create the APIs and store data collected from the user.
 
-
 ## APIs Utilized
 ### CoinGecko
 An independently sourced crypto data such as live prices, NFT floor prices, trading volume, exchange volumes, trading pairs, historical data, contract address data, crypto categories, crypto derivatives, images and more.
@@ -23,11 +23,17 @@ An independently sourced crypto data such as live prices, NFT floor prices, trad
 ### Cloudinary
 A cloud-based image and video management service with an API that enables developers to easily upload, manipulate, optimize, and deliver media assets in real-time.
 
+## Features
+The application allows users to create their own personal account and view live cryptocurrency data.
+On the discover page, the user can find the top 7 coins that trending from the past 24 hours.
+<img width="1352" alt="Screen Shot 2023-04-13 at 10 07 52 AM" src="https://user-images.githubusercontent.com/122525304/231683801-b27a925d-6b64-4ab7-8839-13b160496637.png">
 
-### Deployment
-The application was deployed using Render and can be viewed here.
+Once the user clicks on a coin of their choice, they will be able to view live data about the coin.                             
+<img width="1352" alt="Screen Shot 2023-04-13 at 10 08 14 AM" src="https://user-images.githubusercontent.com/122525304/231683830-70cd41ad-e859-453c-86ea-e001cbcf938a.png">
 
 
+## Deployment
+The application was deployed using Render and can be viewed [here](https://mula.onrender.com).
 ## Future Enhancements
 I would love to come back to this and intergrate the ability to make transactions, as well as using a more effecient API as the current one can be quite glitchy.
 

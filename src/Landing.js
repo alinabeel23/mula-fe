@@ -10,7 +10,7 @@ extend({ SSAOPass })
 // landing page clumps
 const rfs = THREE.MathUtils.randFloatSpread
 const sphereGeometry = new THREE.SphereGeometry(1, 32, 32)
-const baubleMaterial = new THREE.MeshStandardMaterial({ color: "blue", roughness: 0, envMapIntensity: 0.2, emissive: "#370037" })
+const baubleMaterial = new THREE.MeshStandardMaterial({ color: "greenyellow", roughness: 0, envMapIntensity: 0.2, emissive: "#370037" })
 
 
 export const Landing = () => (
